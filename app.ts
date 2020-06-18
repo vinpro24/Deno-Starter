@@ -3,7 +3,7 @@ import "https://deno.land/x/dotenv/load.ts";
 import { Application } from "https://deno.land/x/oak/mod.ts";
 import { timer, logger, errorHandler } from "./middlewares/index.ts";
 import routes from "./routes/index.ts";
-// import WebSocket from "./services/WebSocket/index.ts";
+import WebSocket from "./services/WebSocket/index.ts";
 import "./services/Databases/MongoDB.js";
 import config from "./constants/config.js";
 
@@ -17,8 +17,8 @@ app.use(errorHandler);
 // Routes
 routes(app);
 
-// // WebSocket
-// WebSocket();
+// WebSocket
+WebSocket();
 
 // Databases
 // MongoDB
